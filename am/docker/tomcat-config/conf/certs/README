@@ -1,0 +1,5 @@
+The truststore.jks has some important signers in it.  If you replace this trust store, make sure you add all the signers into the new one or things won't work.
+
+To create self-signed SAN cert, issue this command after altering req.conf.
+
+openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout cert.pem -out cert.pem -config req.conf -extensions 'v3_req'
